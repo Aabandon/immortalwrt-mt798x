@@ -304,10 +304,6 @@ define FIXUP_NEW_MCU_FW_API
 		echo "Fixup new mcu fw API"; \
 		patch -p1 -d $(PKG_BUILD_DIR) < ./files/fix-new-mcu-fw-api.patch; \
 	fi
-	@if [ "$$(CONFIG_MTK_MT7986_NEW_FW)" = "y" ]; then \
-		echo "Fixup eeprom reading API"; \
-		patch -p1 -d $(PKG_BUILD_DIR) < ./files/eeprom-flash-api.patch; \
-	fi
 endef
 
 Hooks/Prepare/Post := FIXUP_NEW_MCU_FW_API
